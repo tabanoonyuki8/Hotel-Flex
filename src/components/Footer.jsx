@@ -9,7 +9,7 @@ const Footer = () => {
         <FaTwitter className="hover:text-gray-300 cursor-pointer" />
         <FaInstagram className="hover:text-gray-300 cursor-pointer" />
       </div>
-      <p>&copy; 2024 Hotel Flex. All rights reserved.</p>
+      <p>&copy; 2024 Hotel Flex. All rights reserved.Developed By Tabanoon mim</p>
     </footer>
   );
 };
