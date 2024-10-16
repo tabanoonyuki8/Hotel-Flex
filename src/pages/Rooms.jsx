@@ -7,7 +7,7 @@ const Rooms = () => {
 
       {/* Room 1 */}
       <div className="room mb-8">
-        <h3 className="text-xl font-semibold mb-2">Room 1 - Deluxe Suite</h3>
+        <h3 className="text-xl font-semibold mb-2">Room 1 - Deluxe</h3>
         <img
           src="https://www.peninsula.com/en/-/media/12---london-property/rooms/20230918-new-images/london_deluxe-room-king_resized.jpg?mw=905&hash=5EBA7EAB9A5C9EC1B43B72F28067F469" 
           alt="Room 1 - Deluxe"
@@ -27,7 +27,7 @@ const Rooms = () => {
 
       {/* Room 2 */}
       <div className="room mb-8">
-        <h3 className="text-xl font-semibold mb-2">Room 2 - Family Room</h3>
+        <h3 className="text-xl font-semibold mb-2">Room 2 - Suite</h3>
         <img
           src="https://longbeachhotelbd.com/wp-content/uploads/2024/02/presidential_header.jpg" 
           alt="Room 2 - Suite"
