@@ -1,79 +1,68 @@
 import React from 'react';
 
-const roomsData = [
-  {
-    id: 1,
-    name: 'Deluxe Room',
-    description: (
-      <div>
-        <p>
-          Our Deluxe Room offers a blend of luxury and comfort, featuring a king-size bed adorned with premium linens and plush pillows. This spacious room is designed with elegant decor, providing a tranquil atmosphere for relaxation. 
-        </p>
-        <p>
-          Guests can enjoy stunning city views from the large windows that allow natural light to flood the room. The room includes a well-appointed seating area, perfect for enjoying a cup of coffee or reading a book. 
-        </p>
-        <p>
-          Modern amenities such as a flat-screen TV with cable channels, a mini-bar stocked with beverages, and complimentary high-speed Wi-Fi ensure you stay connected and entertained. 
-        </p>
-        <p>
-          The en-suite bathroom features a luxurious soaking tub and a separate walk-in shower, along with complimentary toiletries for your convenience.
-        </p>
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    name: 'Suite Room',
-    description: (
-      <div>
-        <p>
-          The Suite Room is the epitome of luxury and space, ideal for guests seeking an upscale experience. This room includes a separate living area with a comfortable sofa and coffee table, providing ample space for relaxation or entertaining guests.
-        </p>
-        <p>
-          The bedroom is furnished with a king-size bed, ensuring a restful night’s sleep. Guests will appreciate the high-end amenities, including a large flat-screen TV, a sound system, and a fully stocked mini-bar.
-        </p>
-        <p>
-          Enjoy the convenience of a dining table for in-room dining or business meetings. The Suite Room also features a lavish en-suite bathroom, complete with a soaking tub, double vanity, and a walk-in shower, along with plush bathrobes and slippers for a touch of indulgence.
-        </p>
-        <p>
-          Personalized services, such as concierge assistance and room service, are available to enhance your stay.
-        </p>
-      </div>
-    ),
-  },
-  {
-    id: 3,
-    name: 'Standard Room',
-    description: (
-      <div>
-        <p>
-          Our Standard Room is perfect for budget-conscious travelers who still want a comfortable and enjoyable stay. This cozy room features a double bed with soft bedding and essential furnishings for a pleasant experience.
-        </p>
-        <p>
-          Designed with simplicity and functionality in mind, the Standard Room includes a workspace for those needing to catch up on work, as well as a flat-screen TV for entertainment. 
-        </p>
-        <p>
-          The room is equipped with essential amenities such as complimentary Wi-Fi, a small refrigerator, and tea/coffee making facilities for added convenience.
-        </p>
-        <p>
-          The en-suite bathroom is well-equipped with a shower, fresh towels, and complimentary toiletries, ensuring that guests have everything they need for a pleasant stay.
-        </p>
-      </div>
-    ),
-  },
-];
-
 const Rooms = () => {
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold text-center mb-6">Our Rooms</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {roomsData.map((room) => (
-          <div key={room.id} className="bg-white rounded-md shadow-md p-4">
-            <h2 className="text-2xl font-semibold mb-2">{room.name}</h2>
-            <p className="text-gray-700">{room.description}</p>
-          </div>
-        ))}
+    <div className="rooms-container p-8">
+      <h2 className="text-2xl font-bold mb-6">Our Rooms</h2>
+
+      {/* Room 1 */}
+      <div className="room mb-8">
+        <h3 className="text-xl font-semibold mb-2">Room 1 - Deluxe Suite</h3>
+        <img
+          src="https://www.peninsula.com/en/-/media/12---london-property/rooms/20230918-new-images/london_deluxe-room-king_resized.jpg?mw=905&hash=5EBA7EAB9A5C9EC1B43B72F28067F469" 
+          alt="Room 1 - Deluxe Suite"
+          className="w-full h-[300px] object-cover mb-4 rounded shadow"
+        />
+        <p className="mb-2">
+          Step into luxury with our Deluxe Suite, featuring a spacious layout adorned with elegant decor. This suite comes equipped with a king-sized bed draped in premium linens, ensuring a restful night’s sleep. 
+        </p>
+        <p className="mb-2">
+          The en-suite bathroom boasts modern fixtures, a soaking tub, and a separate rainfall shower for your relaxation. Enjoy stunning views of the city skyline from your private balcony, perfect for morning coffees or evening cocktails.
+        </p>
+        <p className="mb-2">
+          Additional amenities include a flat-screen TV, a mini-bar stocked with refreshments, and complimentary high-speed Wi-Fi. This room is ideal for couples on a romantic getaway or guests celebrating special occasions.
+        </p>
+        <p className="font-bold">Price: 1000 Taka per night</p>
+      </div>
+
+      {/* Room 2 */}
+      <div className="room mb-8">
+        <h3 className="text-xl font-semibold mb-2">Room 2 - Family Room</h3>
+        <img
+          src="https://longbeachhotelbd.com/wp-content/uploads/2024/02/presidential_header.jpg" 
+          alt="Room 2 - Family Room"
+          className="w-full h-[300px] object-cover mb-4 rounded shadow"
+        />
+        <p className="mb-2">
+          Perfect for families, our Family Room is designed to accommodate up to four guests comfortably. This spacious room features a queen-sized bed along with two twin beds, ensuring everyone has a cozy spot to relax.
+        </p>
+        <p className="mb-2">
+          The room is equipped with a large wardrobe, a work desk for business travelers, and a family-friendly entertainment system, including a flat-screen TV with access to various channels and streaming services.
+        </p>
+        <p className="mb-2">
+          Enjoy the convenience of a mini-fridge for snacks and drinks, as well as a microwave for quick meals. The en-suite bathroom includes essential toiletries, a shower, and ample space for family needs. This room is the ideal choice for those traveling with children.
+        </p>
+        <p className="font-bold">Price: 7000 Taka per night</p>
+      </div>
+
+      {/* Room 3 */}
+      <div className="room mb-8">
+        <h3 className="text-xl font-semibold mb-2">Room 3 - Standard Room</h3>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hotel-suite-living-room.jpg/640px-Hotel-suite-living-room.jpg"
+          alt="Room 3 - Standard Room"
+          className="w-full h-[300px] object-cover mb-4 rounded shadow"
+        />
+        <p className="mb-2">
+          Our Standard Room is the perfect retreat for solo travelers and business professionals seeking comfort without compromising on quality. The room features a comfortable queen-sized bed, a desk area for work, and a plush chair for relaxation.
+        </p>
+        <p className="mb-2">
+          Enjoy modern amenities, including a flat-screen TV, complimentary Wi-Fi, and a coffee maker for your morning brew. The en-suite bathroom is stocked with essential toiletries and features a refreshing shower.
+        </p>
+        <p className="mb-2">
+          Whether you’re here for a short stay or an extended visit, our Standard Room provides all the essentials for a peaceful and productive experience.
+        </p>
+        <p className="font-bold">Price: 5000 Taka per night</p>
       </div>
     </div>
   );

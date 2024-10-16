@@ -1,99 +1,165 @@
 import React, { useState } from 'react';
-import { FaCalendarAlt, FaUsers } from 'react-icons/fa';
 
-const BookingForm = () => {
-  const [guestName, setGuestName] = useState('');
-  const [checkInDate, setCheckInDate] = useState('');
-  const [checkOutDate, setCheckOutDate] = useState('');
-  const [roomType, setRoomType] = useState('');
-  const [numGuests, setNumGuests] = useState(1);
-  const [message, setMessage] = useState('');
+const Booking = () => {
+  const [selectedRoom, setSelectedRoom] = useState('');
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const [paymentDetails, setPaymentDetails] = useState({
+    cardNumber: '',
+    expiryDate: '',
+    cvv: '',
+  });
 
-  const handleSubmit = (e) => {
+  const [checkIn, setCheckIn] = useState('');
+  const [checkOut, setCheckOut] = useState('');
+
+  const roomPrices = {
+    room1: 1000,
+    room2: 7000,
+    room3: 5000,
+  };
+
+  const handleRoomSelection = (e) => {
+    setSelectedRoom(e.target.value);
+  };
+
+  const handleUserChange = (e) => {
+    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+  };
+
+  const handlePaymentChange = (e) => {
+    setPaymentDetails({ ...paymentDetails, [e.target.name]: e.target.value });
+  };
+
+  const handleCheckInChange = (e) => {
+    setCheckIn(e.target.value);
+  };
+
+  const handleCheckOutChange = (e) => {
+    setCheckOut(e.target.value);
+  };
+
+  const handlePaymentSubmit = (e) => {
     e.preventDefault();
-    setMessage(`Thank you, ${guestName}! Your booking for a ${roomType} from ${checkInDate} to ${checkOutDate} for ${numGuests} guest(s) has been received.`);
-    // Here you would typically send this data to your server
+    if (selectedRoom && checkIn && checkOut) {
+      const roomPrice = roomPrices[selectedRoom];
+      alert(
+        `Booking Successful!\n\nUser Information:\nName: ${userInfo.name}\nEmail: ${userInfo.email}\nPhone: ${userInfo.phone}\n\nCheck-in Date: ${checkIn}\nCheck-out Date: ${checkOut}\n\nSelected Room: ${selectedRoom}\nPrice: ${roomPrice} Taka`
+      );
+      // Add logic to save booking details to your database here
+    } else {
+      alert('Please fill in all fields before making the payment.');
+    }
   };
 
   return (
-    <div className="bg-white p-6 rounded-md shadow-md max-w-lg mx-auto mt-10">
-      <h2 className="text-2xl font-bold text-center mb-4">Book Your Stay</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block mb-1">Full Name</label>
-          <input
-            type="text"
-            value={guestName}
-            onChange={(e) => setGuestName(e.target.value)}
-            required
-            className="w-full p-2 border rounded"
-            placeholder="Enter your name"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1">Check-in Date</label>
-          <input
-            type="date"
-            value={checkInDate}
-            onChange={(e) => setCheckInDate(e.target.value)}
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1">Check-out Date</label>
-          <input
-            type="date"
-            value={checkOutDate}
-            onChange={(e) => setCheckOutDate(e.target.value)}
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1">Room Type</label>
-          <select
-            value={roomType}
-            onChange={(e) => setRoomType(e.target.value)}
-            required
-            className="w-full p-2 border rounded"
-          >
-            <option value="">Select a room type</option>
-            <option value="Deluxe Room">Deluxe Room</option>
-            <option value="Suite Room">Suite Room</option>
-            <option value="Standard Room">Standard Room</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block mb-1">Number of Guests</label>
-          <input
-            type="number"
-            value={numGuests}
-            onChange={(e) => setNumGuests(e.target.value)}
-            min="1"
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
+    <div className="booking-container p-8">
+      <h2 className="text-2xl font-bold mb-4">Book a Room</h2>
+
+      <div className="room-selection mb-6">
+        <h3 className="text-xl font-semibold mb-2">Select a Room:</h3>
+        <select
+          className="border p-2 w-full mb-4"
+          value={selectedRoom}
+          onChange={handleRoomSelection}
+        >
+          <option value="">Choose a Room</option>
+          <option value="room1">Deluxe- 10000 Taka</option>
+          <option value="room2">Suite - 7000 Taka</option>
+          <option value="room3">Standard - 5000 Taka</option>
+        </select>
+      </div>
+
+      <form onSubmit={handlePaymentSubmit} className="payment-form">
+        <h3 className="text-xl font-semibold mb-2">User Information:</h3>
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          className="border p-2 w-full mb-4"
+          value={userInfo.name}
+          onChange={handleUserChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          className="border p-2 w-full mb-4"
+          value={userInfo.email}
+          onChange={handleUserChange}
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          className="border p-2 w-full mb-4"
+          value={userInfo.phone}
+          onChange={handleUserChange}
+          required
+        />
+
+        <h3 className="text-xl font-semibold mb-2">Check-in and Check-out:</h3>
+        <input
+          type="date"
+          name="checkIn"
+          placeholder="Check-in Date"
+          className="border p-2 w-full mb-4"
+          value={checkIn}
+          onChange={handleCheckInChange}
+          required
+        />
+        <input
+          type="date"
+          name="checkOut"
+          placeholder="Check-out Date"
+          className="border p-2 w-full mb-4"
+          value={checkOut}
+          onChange={handleCheckOutChange}
+          required
+        />
+
+        <h3 className="text-xl font-semibold mb-2">Payment Details:</h3>
+        <input
+          type="text"
+          name="cardNumber"
+          placeholder="Card Number"
+          className="border p-2 w-full mb-4"
+          value={paymentDetails.cardNumber}
+          onChange={handlePaymentChange}
+          required
+        />
+        <input
+          type="text"
+          name="expiryDate"
+          placeholder="Expiry Date (MM/YY)"
+          className="border p-2 w-full mb-4"
+          value={paymentDetails.expiryDate}
+          onChange={handlePaymentChange}
+          required
+        />
+        <input
+          type="text"
+          name="cvv"
+          placeholder="CVV"
+          className="border p-2 w-full mb-4"
+          value={paymentDetails.cvv}
+          onChange={handlePaymentChange}
+          required
+        />
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
         >
-          Book Now
+          Make Payment
         </button>
       </form>
-      {message && <p className="mt-4 text-green-600 text-center">{message}</p>}
     </div>
   );
 };
 
-const Bookings = () => {
-  return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold text-center mb-6">Hotel Booking</h1>
-      <BookingForm />
-    </div>
-  );
-};
-
-export default Bookings;
+export default Booking;
