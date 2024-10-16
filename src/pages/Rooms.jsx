@@ -22,7 +22,7 @@ const Rooms = () => {
         <p className="mb-2">
           Additional amenities include a flat-screen TV, a mini-bar stocked with refreshments, and complimentary high-speed Wi-Fi. This room is ideal for couples on a romantic getaway or guests celebrating special occasions.
         </p>
-        <p className="font-bold">Price: 1000 Taka per night</p>
+        <p className="font-bold">Price: 10000 Taka per night</p>
       </div>
 
       {/* Room 2 */}
@@ -47,7 +47,7 @@ const Rooms = () => {
 
       {/* Room 3 */}
       <div className="room mb-8">
-        <h3 className="text-xl font-semibold mb-2">Room 3 - Standard Room</h3>
+        <h3 className="text-xl font-semibold mb-2">Room 3 - Standard </h3>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hotel-suite-living-room.jpg/640px-Hotel-suite-living-room.jpg"
           alt="Room 3 - Standard"

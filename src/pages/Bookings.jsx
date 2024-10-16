@@ -23,7 +23,7 @@ const Booking = () => {
   };
 
   const handleRoomSelection = (e) => {
-    setSelectedRoomsetSelectedRoom(e.target.value);
+    setSelectedRoom(e.target.value);
   };
 
   const handleUserChange = (e) => {
@@ -49,8 +49,7 @@ const Booking = () => {
       alert(
         `Booking Successful!\n\nUser Information:\nName: ${userInfo.name}\nEmail: ${userInfo.email}\nPhone: ${userInfo.phone}\n\nCheck-in Date: ${checkIn}\nCheck-out Date: ${checkOut}\n\nSelected Room: ${selectedRoom}\nPrice: ${roomPrice} Taka`
       );
-     
-    
+      // Add logic to save booking details to your database here
     } else {
       alert('Please fill in all fields before making the payment.');
     }
@@ -68,7 +67,7 @@ const Booking = () => {
           onChange={handleRoomSelection}
         >
           <option value="">Choose a Room</option>
-          <option value="room1">Deluxe- 10000 Taka</option>
+          <option value="room1">Deluxe  - 10000 Taka</option>
           <option value="room2">Suite - 7000 Taka</option>
           <option value="room3">Standard - 5000 Taka</option>
         </select>
