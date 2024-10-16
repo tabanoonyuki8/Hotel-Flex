@@ -10,7 +10,7 @@ const Rooms = () => {
         <h3 className="text-xl font-semibold mb-2">Room 1 - Deluxe Suite</h3>
         <img
           src="https://www.peninsula.com/en/-/media/12---london-property/rooms/20230918-new-images/london_deluxe-room-king_resized.jpg?mw=905&hash=5EBA7EAB9A5C9EC1B43B72F28067F469" 
-          alt="Room 1 - Deluxe Suite"
+          alt="Room 1 - Deluxe"
           className="w-full h-[300px] object-cover mb-4 rounded shadow"
         />
         <p className="mb-2">
@@ -30,7 +30,7 @@ const Rooms = () => {
         <h3 className="text-xl font-semibold mb-2">Room 2 - Family Room</h3>
         <img
           src="https://longbeachhotelbd.com/wp-content/uploads/2024/02/presidential_header.jpg" 
-          alt="Room 2 - Family Room"
+          alt="Room 2 - Suite"
           className="w-full h-[300px] object-cover mb-4 rounded shadow"
         />
         <p className="mb-2">
@@ -50,7 +50,7 @@ const Rooms = () => {
         <h3 className="text-xl font-semibold mb-2">Room 3 - Standard Room</h3>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hotel-suite-living-room.jpg/640px-Hotel-suite-living-room.jpg"
-          alt="Room 3 - Standard Room"
+          alt="Room 3 - Standard"
           className="w-full h-[300px] object-cover mb-4 rounded shadow"
         />
         <p className="mb-2">

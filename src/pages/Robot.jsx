@@ -80,7 +80,7 @@ const Robot = () => {
 
       <div className="mt-8">
         <button 
-          onClick={() => alert('Live chat service is available now! How can we help you today?')} 
+          onClick={() => alert('Live chat service is not available,Comming Soon!')} 
           className="bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-600 shadow-md"
         >
           Live Chat
